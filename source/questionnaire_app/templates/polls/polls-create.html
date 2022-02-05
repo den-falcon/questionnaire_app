@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Создание опроса{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Новый опрос</h1>
+        <form action="" method="post">
+            {% include "partial/form.html" with button_text="Создать" %}
+        </form>
+        <br>
+        <a href="{% url "index" %}" class="btn btn-danger">К списку опросов</a>
+    </div>
+{% endblock %}

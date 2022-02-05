@@ -26,7 +26,6 @@ class SearchView(ListView):
         if self.search_value:
             context['form'] = SearchForm(initial={self.search_form_field: self.search_value})
             context[self.search_form_field] = self.search_value
-        print(context)
         return context
 
     def get_form(self):
