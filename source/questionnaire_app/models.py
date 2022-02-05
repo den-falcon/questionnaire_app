@@ -25,7 +25,7 @@ class Choice(models.Model):
                              verbose_name='Вопрос')
 
     def __str__(self):
-        return f'{self.answer} | {self.poll}'
+        return f'{self.answer}'
 
     class Meta:
         db_table = 'choice'
