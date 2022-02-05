@@ -1,7 +1,7 @@
 from django import forms
-from django.forms import widgets, TextInput
+from django.forms import widgets, TextInput, CheckboxInput, CharField
 
-from questionnaire_app.models import Poll, Choice
+from questionnaire_app.models import Poll, Choice, Answer
 
 
 class SearchForm(forms.Form):
@@ -25,6 +25,16 @@ class ChoiceForm(forms.ModelForm):
         widgets = {
             'answer': TextInput(attrs={'class': 'form-control', 'style': 'max-width: 30rem;'})
         }
-        labels = {
-            'answer': 'Добавить вариант ответа:'
+
+
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        exclude = ['poll']
+        widgets = {
+            'choice': forms.RadioSelect
         }
+
+    def __init__(self, *args, **kwargs):
+        super(AnswerForm, self).__init__(*args, **kwargs)
+        self.fields['choice'].queryset = Choice.objects.filter('pool=1')

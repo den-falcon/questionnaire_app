@@ -15,12 +15,12 @@ class Poll(models.Model):
 
     class Meta:
         db_table = 'poll'
-        verbose_name = 'Вопрос'
-        verbose_name_plural = 'Вопросы'
+        verbose_name = 'Опрос'
+        verbose_name_plural = 'Опросы'
 
 
 class Choice(models.Model):
-    answer = models.CharField(max_length=200, verbose_name="Ответ")
+    answer = models.CharField(max_length=200, verbose_name="Вариант ответа")
     poll = models.ForeignKey('questionnaire_app.Poll', related_name='choices', on_delete=models.CASCADE,
                              verbose_name='Вопрос')
 
@@ -29,5 +29,21 @@ class Choice(models.Model):
 
     class Meta:
         db_table = 'choice'
-        verbose_name = 'Ответ'
-        verbose_name_plural = 'Ответы'
+        verbose_name = 'Вариант ответа'
+        verbose_name_plural = 'Варианты ответа'
+
+
+class Answer(models.Model):
+    poll = models.ForeignKey('questionnaire_app.Poll', related_name='answers', on_delete=models.CASCADE,
+                             verbose_name='Опрос')
+    choice = models.ForeignKey('questionnaire_app.Choice', related_name='answers', on_delete=models.CASCADE,
+                               verbose_name='Ответ')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+
+    def __str__(self):
+        return f'{self.poll} | {self.choice}'
+
+    class Meta:
+        db_table = 'answers'
+        verbose_name = 'Ответ на опрос'
+        verbose_name_plural = 'Ответы на опрос'
