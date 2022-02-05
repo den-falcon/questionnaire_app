@@ -1,8 +1,8 @@
 from django.contrib import admin
-from questionnaire_app.models import Pool, Choice
+from questionnaire_app.models import Poll, Choice
 
 
-class PoolAdmin(admin.ModelAdmin):
+class PollAdmin(admin.ModelAdmin):
     list_display = ['id', 'question', 'datetime']
     list_filter = ['question']
     search_fields = ['question']
@@ -10,5 +10,5 @@ class PoolAdmin(admin.ModelAdmin):
     readonly_fields = ['datetime']
 
 
-admin.site.register(Pool, PoolAdmin)
+admin.site.register(Poll, PollAdmin)
 admin.site.register(Choice)

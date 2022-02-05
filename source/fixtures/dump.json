@@ -1,0 +1,298 @@
+[
+{
+    "model": "questionnaire_app.poll",
+    "pk": 1,
+    "fields": {
+        "question": "Вы счастливы?",
+        "datetime": "2022-02-05T08:56:49.410Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 2,
+    "fields": {
+        "question": "Какая из платформ является долгожителем среди систем управления и жизненным цикла продукта и его тестировании?",
+        "datetime": "2022-02-05T08:59:41.165Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 3,
+    "fields": {
+        "question": "Вы обеспокоены проблемой загрязнения природы?",
+        "datetime": "2022-02-05T09:01:45.844Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 4,
+    "fields": {
+        "question": "Вы можете себе позволить выбросить ненужный пакет или другой мусор на землю?",
+        "datetime": "2022-02-05T09:03:00.831Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 5,
+    "fields": {
+        "question": "Часто ли Вы видите, как люди бросают мусор в неположенном месте?",
+        "datetime": "2022-02-05T09:04:18.210Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 6,
+    "fields": {
+        "question": "Какими пакетами вы пользуетесь в магазине?",
+        "datetime": "2022-02-05T09:05:08.792Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 7,
+    "fields": {
+        "question": "Как Вы считаете, способна ли пластмассовая посуда навредить человеку?",
+        "datetime": "2022-02-05T09:06:56.521Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 8,
+    "fields": {
+        "question": "При необходимости, Вы можете пожертвовать своим временем и силами для уборки местности от мусора?",
+        "datetime": "2022-02-05T09:08:04.672Z"
+    }
+},
+{
+    "model": "questionnaire_app.poll",
+    "pk": 9,
+    "fields": {
+        "question": "Знаете ли Вы, где применяют переработанный пластик?",
+        "datetime": "2022-02-05T09:09:45.249Z"
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 1,
+    "fields": {
+        "answer": "Да",
+        "poll": 1
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 2,
+    "fields": {
+        "answer": "Нет",
+        "poll": 1
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 3,
+    "fields": {
+        "answer": "Не знаю",
+        "poll": 1
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 4,
+    "fields": {
+        "answer": "TestRail",
+        "poll": 2
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 5,
+    "fields": {
+        "answer": "ALM Octane",
+        "poll": 2
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 6,
+    "fields": {
+        "answer": "Да",
+        "poll": 3
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 7,
+    "fields": {
+        "answer": "Нет",
+        "poll": 3
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 8,
+    "fields": {
+        "answer": "Затрудняюсь ответить",
+        "poll": 3
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 9,
+    "fields": {
+        "answer": "Да",
+        "poll": 4
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 10,
+    "fields": {
+        "answer": "Скорее да",
+        "poll": 4
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 11,
+    "fields": {
+        "answer": "Затрудняюсь ответить",
+        "poll": 4
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 12,
+    "fields": {
+        "answer": "Скорее нет",
+        "poll": 4
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 13,
+    "fields": {
+        "answer": "Нет",
+        "poll": 4
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 14,
+    "fields": {
+        "answer": "Часто",
+        "poll": 5
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 15,
+    "fields": {
+        "answer": "Иногда",
+        "poll": 5
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 16,
+    "fields": {
+        "answer": "Редко",
+        "poll": 5
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 17,
+    "fields": {
+        "answer": "Пластиковыми",
+        "poll": 6
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 18,
+    "fields": {
+        "answer": "Бумажными",
+        "poll": 6
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 19,
+    "fields": {
+        "answer": "Многоразовыми",
+        "poll": 6
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 20,
+    "fields": {
+        "answer": "Способна",
+        "poll": 7
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 21,
+    "fields": {
+        "answer": "Не способна",
+        "poll": 7
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 22,
+    "fields": {
+        "answer": "Затрудняюсь ответить",
+        "poll": 7
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 23,
+    "fields": {
+        "answer": "Да, могу",
+        "poll": 8
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 24,
+    "fields": {
+        "answer": "Да, при наличии времени",
+        "poll": 8
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 25,
+    "fields": {
+        "answer": "Нет, не могу",
+        "poll": 8
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 26,
+    "fields": {
+        "answer": "Затрудняюсь ответить",
+        "poll": 8
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 27,
+    "fields": {
+        "answer": "Да",
+        "poll": 9
+    }
+},
+{
+    "model": "questionnaire_app.choice",
+    "pk": 28,
+    "fields": {
+        "answer": "Нет",
+        "poll": 9
+    }
+}
+]

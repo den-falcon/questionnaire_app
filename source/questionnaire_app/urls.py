@@ -1,5 +1,7 @@
 from django.urls import path
 
-urlpatterns = [
+from questionnaire_app.views.polls import PollsView
 
+urlpatterns = [
+    path('', PollsView.as_view(), name='index'),
 ]
