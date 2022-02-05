@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <form action="{% url "poll-delete" poll.pk %}" method="POST">
+        {% csrf_token %}
+            <h2>Вы действительно хотите удалить опрос? {{ poll.name }}</h2>
+            <button type="submit" class="btn btn-outline-danger">Да</button>
+            <a class="btn btn-danger" href="{% url "index" %}">Нет</a>
+        </form>
+    </div>
+{% endblock %}
