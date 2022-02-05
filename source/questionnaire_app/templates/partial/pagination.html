@@ -18,13 +18,12 @@
         </li>
     {% endif %}
     <li class="page-item">
-        <form method="get">
-            <label class="input-group" for="page">
-                <input type="hidden" class="form-control" name="search" value="{{ search }}">
-                <input type="text" class="form-control w-10" name="page"  id="page" value="{{ page_obj.number }}">
-                <span class="input-group-text">из {{ page_obj.paginator.num_pages }}</span>
-                <input type="hidden" class="form-control">
-            </label>
+        <form class="d-flex" method="get">
+            <label for="page"></label>
+            <input type="text" class="form-control ps-4 rounded-0" style="max-width: 3.5rem;" name="page"  id="page" value="{{ page_obj.number }}">
+            <input type="hidden" name="search" value="{{ search }}">
+            <span class="rounded-0 input-group-text">из {{ page_obj.paginator.num_pages }}</span>
+            <input type="hidden">
         </form>
     </li>
     {% if page_obj.has_next %}

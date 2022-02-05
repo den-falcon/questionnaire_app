@@ -1,5 +1,5 @@
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 
 from questionnaire_app.forms import PollForm
 from questionnaire_app.models import Poll
@@ -14,6 +14,12 @@ class PollsView(SearchView):
     paginate_by = 5
     paginate_orphans = 0
     search_fields = ['question__icontains']
+
+
+class PollView(DetailView):
+    model = Poll
+    context_object_name = "poll"
+    template_name = 'polls/poll-view.html'
 
 
 class PollCreate(CreateView):
