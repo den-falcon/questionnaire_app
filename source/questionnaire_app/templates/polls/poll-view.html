@@ -26,12 +26,11 @@
             </div>
         {% endblock %}
         <br>
-{#        <form action="{% url 'choice-create' poll.pk %}" method="post">#}
-{#            {% include "partial/form.html" with lable="Добавить свой вариант ответа:" button_text="Добавить" %}#}
-{#        </form>#}
-{#        <div class="btn-group" role="group" aria-label="Basic example">#}
-{#            <a href="{% url "index" %}" class="btn btn-info text-white rounded-0">К опросам</a>#}
-{#            <a href="{% url "index" %}" class="btn btn-info text-white rounded-0">К вопросам</a>#}
-{#        </div>#}
+        <form action="{% url 'choice-create' poll.pk %}" method="post">
+            {% include "partial/form.html" with lable="Добавить свой вариант ответа:" button_text="Добавить" %}
+        </form>
+        <div class="mt-2">
+            <a href="{% url "answer-create" poll.pk %}" class="btn btn-success text-white rounded-0" style="min-width: 10rem;">Пройти опрос</a>
+        </div>
     </div>
 {% endblock %}

@@ -5,11 +5,11 @@
 {% endfor %}
 
 {% for field in form %}
-    <label class="form-check-label" for="{{ field.id_for_label }}">{{ lable }}</label>
+    <label class="{{ class }}" for="{{ field.id_for_label }}">{{ lable }}</label>
     {% for error in field.errors %}
         <p class="text-danger">{{ error }}</p>
     {% endfor %}
     {{ field }}
 {% endfor %}
 <br>
-<input class="btn btn-info text-white" type="submit" value={{ button_text }} />
+<input class="btn btn-info text-white rounded-0" style="min-width: 10rem;" type="submit" value="{{ button_text }}" />

@@ -1,6 +1,5 @@
 from django import forms
-from django.forms import widgets, TextInput, CheckboxInput, CharField
-from django.shortcuts import get_object_or_404
+from django.forms import widgets, TextInput, RadioSelect
 
 from questionnaire_app.models import Poll, Choice, Answer
 
@@ -33,10 +32,9 @@ class AnswerForm(forms.ModelForm):
         model = Answer
         exclude = ['poll']
         widgets = {
-            'choice': forms.RadioSelect
+            'choice': RadioSelect()
         }
 
     def __init__(self, pk, *args, **kwargs):
         super(AnswerForm, self).__init__(*args, **kwargs)
-        print(self.fields['choice'].queryset)
         self.fields['choice'].queryset = Choice.objects.filter(poll_id=pk)

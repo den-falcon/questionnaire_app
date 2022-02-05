@@ -1,4 +1,36 @@
-{% extends 'polls/poll-view.html' %}
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <p class="text-muted">Дата создания: {{ poll.datetime|date:'d.m.Y | G:i' }}</p>
+        <h1>{{  poll.question }}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+
+                {% for error in form.non_field_errors %}
+                   <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+
+                {% for field in form %}
+                    <div class="form-check">
+                        <label class="form-check-label" for="{{ field.id_for_label }}"></label>
+                        {% for error in field.errors %}
+                            <p class="text-danger">{{ error }}</p>
+                        {% endfor %}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <input class="mt-3 btn btn-info text-white rounded-0" style="min-width: 10rem;" type="submit" value=Отправить />
+            </form>
+        <br>
+{#        <form action="{% url 'choice-create' poll.pk %}" method="post">#}
+{#            {% include "partial/form.html" with lable="Добавить свой вариант ответа:" button_text="Добавить" %}#}
+{#        </form>#}
+{#        <div class="btn-group" role="group" aria-label="Basic example">#}
+{#            <a href="{% url "index" %}" class="btn btn-info text-white rounded-0">К опросам</a>#}
+{#            <a href="{% url "index" %}" class="btn btn-info text-white rounded-0">К вопросам</a>#}
+{#        </div>#}
+    </div>
+{% endblock %}
 {% block form %}
     <form action="" method="post">
         {% include "partial/form.html" with button_text="Создать" %}

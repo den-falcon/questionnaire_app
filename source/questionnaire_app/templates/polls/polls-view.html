@@ -21,6 +21,9 @@
                     <div class="card-body">
                       <p class="card-text">{{ poll.question }}</p>
                     </div>
+                      <div class="p-3 pt-0 text-center text-md-start">
+                        <a href="{% url 'answer-create' poll.pk %}" class="btn btn-info text-white rounded-0">Пройти опрос</a>
+                      </div>
                   </div>
                 </div>
               {% endfor %}
