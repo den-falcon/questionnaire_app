@@ -6,7 +6,7 @@
 
 {% for field in form %}
     <br>
-    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>
+    <p><label for="{{ field.id_for_label }}">{{ lable }}</label></p>
     {% for error in field.errors %}
         <p class="text-danger">{{ error }}</p>
     {% endfor %}
@@ -14,4 +14,4 @@
     <br>
 {% endfor %}
 <br>
-<input class="btn btn-danger" type="submit" value={{ button_text }} />
+<input class="btn btn-info text-white" type="submit" value={{ button_text }} />

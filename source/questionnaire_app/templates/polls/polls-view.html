@@ -8,15 +8,15 @@
     <div class="container">
         <div class="mt-5">
         <h3 class="mt-4 mb-0 fw-bold fs-2">Опросы</h3>
-        <hr class="text-danger mt-1">
-          <div class="row justify-content-start">
+        <hr class="text-dark mt-1">
+          <div class="row justify-content-evenly" style="max-width: 40rem;">
               {% for poll in object_list %}
-                <div class="col-md-4 col-sm-6 mb-4">
-                  <div class="card h-100 ">
-                    <div class="px-3 d-flex justify-content-between card-header bg-danger text-light p-0">
-                        <a class="my-2 flex-grow-1 text-white text-decoration-none" href="{% url 'poll-view' poll.pk %}">{{ poll.datetime|date:'d.m.Y | G:i' }}</a>
-                        <a class="my-2 mx-1 text-white" href="{% url 'poll-update' poll.pk %}"><i class="fs-4 ms-2 fas fa-edit"></i></a>
-                        <a class="my-2 mx-1 text-white" href="{% url 'poll-delete' poll.pk %}"><i class="fs-4 ms-2 fas fa-trash-alt"></i></a>
+                <div class="col-12 mb-4">
+                  <div class="card h-100 rounded-0">
+                    <div class="px-3 d-flex justify-content-between card-header bg-info py-0 rounded-0">
+                        <a class="my-2 flex-grow-1 text-white fw-bold text-decoration-none" href="{% url 'poll-view' poll.pk %}">{{ poll.datetime|date:'d.m.Y | G:i' }}</a>
+                        <a class="border-1 my-2 mx-1 text-white" href="{% url 'poll-update' poll.pk %}"><i class="fs-4 ms-2 fas fa-edit"></i></a>
+                        <a class="my-2 mx-1 text-danger" href="{% url 'poll-delete' poll.pk %}"><i class="fs-4 ms-2 fas fa-trash-alt"></i></a>
                     </div>
                     <div class="card-body">
                       <p class="card-text">{{ poll.question }}</p>
@@ -25,6 +25,7 @@
                 </div>
               {% endfor %}
           </div>
+        <hr class="text-dark mt-1">
         </div>
         {% if is_paginated %}
             {% include 'partial/pagination.html' %}

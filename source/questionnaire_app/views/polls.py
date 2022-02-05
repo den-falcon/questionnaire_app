@@ -1,7 +1,7 @@
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 
-from questionnaire_app.forms import PollForm
+from questionnaire_app.forms import PollForm, ChoiceForm
 from questionnaire_app.models import Poll
 from questionnaire_app.views.base import SearchView
 
@@ -21,20 +21,25 @@ class PollView(DetailView):
     context_object_name = "poll"
     template_name = 'polls/poll-view.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = ChoiceForm()
+        return context
+
 
 class PollCreate(CreateView):
     model = Poll
     form_class = PollForm
-    template_name = "polls/polls-create.html"
+    template_name = "polls/poll-create.html"
 
 
 class PollUpdate(UpdateView):
     model = Poll
-    template_name = 'polls/polls-update.html'
+    template_name = 'polls/poll-update.html'
     form_class = PollForm
 
     def get_success_url(self):
-        return reverse("index")  # kwargs={"pk": self.object.pk})
+        return reverse("poll-view", kwargs={"pk": self.object.pk})
 
 
 class PollDelete(DeleteView):
